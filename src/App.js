@@ -1,8 +1,10 @@
+import { Routes, Route, BrowserRouter, Switch } from "react-router-dom";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <div className="App">
-      <h1>Shivam Raikar</h1>
+        <Navbar />
     </div>
   );
 }
