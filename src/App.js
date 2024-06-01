@@ -1,12 +1,15 @@
-import { Routes, Route, BrowserRouter, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
+import Project from "./components/Project";
+import Aboutme from "./components/Aboutme";
 
 function App() {
   return (
-    <div className="App">
-        <Navbar />
-        <Home />
+    <div className="relative">
+      <Navbar />
+      <Home />
+      <Aboutme />
+      <Project />
     </div>
   );
 }
