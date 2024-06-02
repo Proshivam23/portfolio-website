@@ -11,9 +11,9 @@ import { FaSquareInstagram } from "react-icons/fa6";
 const Navbar = () => {
     return ( 
         <nav style={{ backgroundColor: 'rgb(20, 20, 20)'}} className="text-white fixed top-0 left-0 z-10 w-full">
-            <div className="flex items-center justify-between p-2">
+            <div className="flex flex-col lg:flex-row items-center lg:justify-between p-2">
                 <div className="font-rouge-script pl-2">Portfolio</div>
-                <div className="flex w-1/2 justify-between items-center">
+                <div className="flex flex-col lg:flex-row w-1/2 lg:justify-between items-center">
                     <Link to="home" smooth={true} duration={500} className="cursor-pointer" >Home</Link>
                     <Link to="aboutme" smooth={true} duration={500} className="cursor-pointer" >About me</Link>
                     <Link to="project" smooth={true} duration={500} className="cursor-pointer" >My Projects</Link>
