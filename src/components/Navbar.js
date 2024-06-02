@@ -10,7 +10,7 @@ import { FaSquareInstagram } from "react-icons/fa6";
 
 const Navbar = () => {
     return ( 
-        <nav className="text-white fixed top-0 left-0 z-10 w-full">
+        <nav style={{ backgroundColor: 'rgb(20, 20, 20)'}} className="text-white fixed top-0 left-0 z-10 w-full">
             <div className="flex items-center justify-between p-2">
                 <div className="font-rouge-script pl-2">Portfolio</div>
                 <div className="flex w-1/2 justify-between items-center">
