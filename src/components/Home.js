@@ -1,16 +1,21 @@
-import React, { useEffect } from 'react';
-import myPhoto from '../image/myimage.jpg';
+import React, { useEffect, useState } from 'react';
 import '../App.css';
 import { motion, useAnimation } from 'framer-motion';
 
 const Home = () => {
-  const text = 'Full Stack Developer'.split(' ');
+  const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
+  const textPhrases = [
+    'Full Stack Developer',
+    'UI UX Designer',
+    'Graphic Designer',
+    'Gamer'
+  ];
   const text2 = 'Hello, I am Shivam Raikar.'.split(' ');
   const controls = useAnimation();
   const controls2 = useAnimation();
 
-  const animateText = async (controls, textLength) => {
-    for (let i = 0; i < textLength; i++) {
+  const animateText = async (controls, textArray) => {
+    for (let i = 0; i < textArray.length; i++) {
       await controls.start((index) => ({
         opacity: index <= i ? 1 : 0,
         transition: { duration: 0.25 },
@@ -19,21 +24,31 @@ const Home = () => {
   };
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      animateText(controls, text.length);
-      animateText(controls2, text2.length);
+    const phraseInterval = setInterval(() => {
+      setCurrentPhraseIndex((prevIndex) => (prevIndex + 1) % textPhrases.length);
     }, 5000);
 
-    animateText(controls, text.length);
-    animateText(controls2, text2.length);
+    const blinkInterval = setInterval(() => {
+      animateText(controls2, text2);
+    }, 15000);
 
-    return () => clearInterval(interval);
-  }, [controls, controls2, text.length, text2.length]);
+    animateText(controls, textPhrases[currentPhraseIndex].split(' '));
+    animateText(controls2, text2);
+
+    return () => {
+      clearInterval(phraseInterval);
+      clearInterval(blinkInterval);
+    };
+  }, [controls, controls2, currentPhraseIndex, textPhrases, text2]);
+
+  useEffect(() => {
+    animateText(controls, textPhrases[currentPhraseIndex].split(' '));
+  }, [currentPhraseIndex, controls, textPhrases]);
 
   return (
     <section id="home" className="h-screen flex flex-col justify-center lg:flex-row lg:justify-around items-center">
       <div className="h-40 w-40 lg:h-80 lg:w-80">
-        <img className="rounded-full" src={myPhoto} alt="Shivam Raikar" />
+        <img className="rounded-full" src="/image/myimage.jpg" alt="Shivam Raikar" />
       </div>
       <div className="text-white text-4xl lg:text-8xl jersey-20-regular">
         <div>
@@ -49,7 +64,7 @@ const Home = () => {
           ))}
         </div>
         <div className="text-3xl lg:text-7xl">
-          {text.map((el, i) => (
+          {textPhrases[currentPhraseIndex].split(' ').map((el, i) => (
             <motion.span
               custom={i}
               animate={controls}

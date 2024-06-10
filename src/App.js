@@ -11,8 +11,8 @@ function App() {
       <Navbar />
       <Home />
       <Aboutme />
-      <Project />
       <Skills/>
+      <Project />
       <Contactme />
     </div>
   );
