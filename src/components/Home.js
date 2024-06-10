@@ -46,7 +46,7 @@ const Home = () => {
   }, [currentPhraseIndex, controls, textPhrases]);
 
   return (
-    <section id="home" className="h-screen flex flex-col justify-center lg:flex-row lg:justify-around items-center">
+    <section id="home" className="h-screen flex flex-col justify-center lg:flex-row lg:justify-around items-center lg:relative">
       <div className="h-40 w-40 lg:h-80 lg:w-80">
         <img className="rounded-full" src="/image/myimage.jpg" alt="Shivam Raikar" />
       </div>
