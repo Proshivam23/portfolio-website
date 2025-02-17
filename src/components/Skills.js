@@ -4,11 +4,13 @@ const Skills = () => {
   const items = [
     { id: 'skill1', title: 'Skill 1', subtitle: 'Description 1', image: "/image/skills/pic1.png" },
     { id: 'skill2', title: 'Skill 1', subtitle: 'Description 1', image: "/image/skills/pic2.png" },
-    { id: 'skill3', title: 'Skill 1', subtitle: 'Description 1', image: "/image/skills/pic3.jpg" },
+    { id: 'skill3', title: 'Skill 1', subtitle: 'Description 1', image: "/image/skills/pic3.png" },
     { id: 'skill4', title: 'Skill 1', subtitle: 'Description 1', image: "/image/skills/pic4.png" },
     { id: 'skill5', title: 'Skill 1', subtitle: 'Description 1', image: "/image/skills/pic5.png" },
     { id: 'skill6', title: 'Skill 1', subtitle: 'Description 1', image: "/image/skills/pic6.png" },
-    { id: 'skill7', title: 'Skill 1', subtitle: 'Description 1', image: "/image/skills/pic7.jpg" },
+    { id: 'skill7', title: 'Skill 1', subtitle: 'Description 1', image: "/image/skills/pic7.png" },
+    { id: 'skill8', title: 'Skill 1', subtitle: 'Description 1', image: "/image/skills/pic8.png" },
+    { id: 'skill9', title: 'Skill 1', subtitle: 'Description 1', image: "/image/skills/pic9.png" },
   ];
 
   return (

@@ -7,7 +7,7 @@ import Skills from "./components/Skills";
 
 function App() {
   return (
-    <div className="static lg:relative">
+    <div className="">
       <Navbar />
       <Home />
       <Aboutme />

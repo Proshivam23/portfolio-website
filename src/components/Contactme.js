@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../contactme.css';
 
 const Contactme = () => {
     const [name, setName] = useState("");
@@ -39,7 +40,7 @@ const Contactme = () => {
     }
 
     return (
-        <section id="contact" className="relative h-screen flex justify-center items-center flex-col">
+        <section id="contact" className=" container2 relative h-screen flex justify-center items-center flex-col">
             <div className="w-1/2">
                 <div className="text-white text-center text-5xl subfont mb-2 lg:mb-10">
                     Contact me

@@ -1,15 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import '../App.css';
 import { motion, useAnimation } from 'framer-motion';
 
 const Home = () => {
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
-  const textPhrases = [
-    'Full Stack Developer',
-    'UI UX Designer',
-    'Graphic Designer',
-    'Gamer'
-  ];
+  
+ 
+
+    const textPhrases = useMemo(() => [
+      'Full Stack Developer',
+      'UI UX Designer',
+      'Graphic Designer',
+      'Gamer'
+    ], []);
+  
+
   const text2 = 'Hello, I am Shivam Raikar.'.split(' ');
   const controls = useAnimation();
   const controls2 = useAnimation();
@@ -46,7 +51,7 @@ const Home = () => {
   }, [currentPhraseIndex, controls, textPhrases]);
 
   return (
-    <section id="home" className="h-screen flex flex-col justify-center lg:flex-row lg:justify-around items-center lg:relative">
+    <section id="home" className="container h-screen flex flex-col justify-center lg:flex-row lg:justify-around items-center lg:relative">
       <div className="h-40 w-40 lg:h-80 lg:w-80">
         <img className="rounded-full" src="/image/myimage.jpg" alt="Shivam Raikar" />
       </div>
